@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Library -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+    <title>Latihan</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- tidak berubah bila diganti diconsole -->
+        <h1 v-pre>{{message}}</h1>
+        <h1 v-once>{{message}}</h1>
+        <!-- menghilangkan blink message menggunakan css display: none; -->
+        <h1 style="color: red;" v-cloak>{{message}}</h1><br><br>
+
+        <h1>{{message}}</h1>
+        <h1 v-text="message"></h1>
+        <h1 v-text="messagetext"></h1>
+        <h1 v-html="messagehtml"></h1>
+        <!-- show dengan false dan true -->
+        <h1 v-show="messageshow">Berhasil tampil, hilangkan dengan false</h1>
+        <!-- if -->
+        <h1 v-if="messageshow == messageshow2">Berhasil tampil, hilangkan dengan false salah satu</h1>
+        <!-- if else -->
+        <h3 v-if="messageif"></h3>
+        <h3 v-else="messageif">Tidak Berhasil Tampil</h3>
+
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Test Latihan',
+                messagetext: 'Test <b>Latihan</b>',
+                messagehtml: 'Test <b>Latihan<b>',
+                intro: 'Latihan Pertama',
+                messageshow: true,
+                messageshow2: true,
+                messageif: true
+            }
+        })
+    </script>
+</body>
+
+</html>

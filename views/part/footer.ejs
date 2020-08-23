@@ -1,0 +1,33 @@
+<footer class="section-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12">
+                <a class="navbar-brand" href="#">
+                    <img src="../assets/img/logo.svg" alt="Logo">
+                </a>
+                <p class="txt-quote">"We will never know the real answer before we try".</p>
+            </div>
+            <div class="col-md-4 col-12">
+                <h3>Info</h3>
+                <a class="txt-info no-mg">Blog</a><br>
+                <a class="txt-info">Project</a>
+                <div class="social-media">
+                    <a href="#"><img class="ic_instagram mr-1" src="../assets/icon/instagram.svg" alt="instagram"></a>
+                    <a href="#"><img class="ic_linkedin mx-1" src="../assets/icon/linkedin.svg" alt="linkedin"></a>
+                    <a href="#"><img class="ic_dribbble mx-1" src="../assets/icon/dribbble.svg" alt="dribbble"></a>
+                    <a href="#"><img class="ic_github mx-1" src="../assets/icon/github.svg" alt="github"></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <h3>Contact</h3>
+                <% for (let data of dataPribadi) { %>
+                <p class="no-mg"><%- data.email %></p>
+                <p class="no-mg"><%- data.notelp %></p>
+                <p class="no-mg"><%- data.alamat %></p>
+                <p class="no-mg"><%- data.kota %></p>
+                <p class="no-mg"><%- data.negara %></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</footer>

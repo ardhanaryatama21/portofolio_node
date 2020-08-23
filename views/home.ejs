@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('part/header') %>
+
+<body>
+    <%- include('part/navbar') %>
+    <header class="section-page header-index" id="home">
+        <div class="container">
+            <img class="img-rectangle d-none d-lg-block" src="../assets/partikel/rectangle-partikel.svg" alt="partikel">
+            <div class="row justify-content-center header-flex">
+                <div class="col-md-6 col-12 my-auto">
+                    <div class="desc-layout mt-4">
+                        <img class="rectangle" src="../assets/partikel/rectangle.svg" alt="">
+                        <% for (let data of dataPribadi) { %>
+                        <h1 class="txt-nama-header"><%- data.nama %></h1>
+                        <p class="txt-desc-header my-2"><%- data.deskripsi %>
+                        </p>
+                        <% } %>
+                    </div>
+                    <a class="btn btn-hire mt-2" href="#">Hire Me!</a>
+                </div>
+                <div class="col-md-6 col-12 text-center">
+                    <div class="layout-img-jumbo">
+                        <img class="img-jumbo" src="../assets/img/jumbo.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-page section-skills" id="skills">
+        <img class="img-partikel d-none d-lg-block" src="../assets/partikel/partikel.svg" alt="partikel">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="txt-title">My Skills</h1>
+                </div>
+                <% for (let skill of skillSaya) { %>
+                <div class="col-lg-4 col-md-6 col-12 mt-4">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-4 no-pd text-center">
+                                <img class="img-html" src="../assets/img/<%- skill.gambar %>" alt="HTML">
+                            </div>
+                            <div class="col-lg-7 col-md-8 col-8 no-pd">
+                                <div class="txt-desc-skill px-2">
+                                    <h3><%- skill.nama %></h3>
+                                    <p class="txt-desc"><%- skill.deskripsi %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <img class="img-rectangle" src="../assets/partikel/rectangle-partikel.svg" alt="partikel">
+    </section>
+    <section class="section-hire">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <h2 class="txt-hireme">Interested Working With Me?</h2>
+                </div>
+                <div class="col-12 mt-3">
+                    <a class="btn btn-project mx-1">See All Project</a>
+                    <a class="btn btn-hireme mx-1">Hire Me!</a>
+                </div>
+            </div>
+            <img class="img-rectangle d-none d-lg-block" src="../assets/partikel/rectangle-partikel.svg" alt="partikel">
+        </div>
+    </section>
+    <section class="section-page section-tools" id="tools">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1>Tools For My Work</h1>
+                    <div class="layout-tools">
+                        <img class="ic_figma m-3" src="../assets/img/Figma.svg" alt="Figma">
+                        <img class="ic_xd m-3" src="../assets/img/xd.svg" alt="XD">
+                        <img class="ic_photoshop m-3" src="../assets/img/photoshop.svg" alt="Adobe Photoshop">
+                        <img class="ic_illustrator m-3" src="../assets/img/illustrator.svg" alt="Adobe Illustrator">
+                        <img class="ic_vscode m-3" src="../assets/img/vscode.svg" alt="Visual Studio Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('part/footer') %>
+    <%- include('part/library-js') %>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+    <script>
+        $(".card").click(function () {
+            if (!$(this).hasClass("active")) {
+                $(".card").removeClass("active");
+                $(this).addClass("active");
+            } else if ($(this).hasClass("active")) {
+                $(".card").removeClass("active");
+            } else {
+                return false;
+            }
+        });
+    </script>
+</body>
+
+</html>
